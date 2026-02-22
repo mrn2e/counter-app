@@ -83,12 +83,17 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
         font-size: var(--counter-app-button-font-size, var(--ddd-font-size-s));
         margin: var(--ddd-spacing-2);
         border-radius: var(--ddd-radius-lg);
+        transition: background-color 0.3s, transform 0.3s;
       }
+      button:hover{
+        background-color: var(--ddd-theme-default-athertonViolet);
+        transform: scale(1.1);
+      }
+      
       .buttons {
         display: flex;
         justify-content: center;
         margin-bottom: var(--ddd-spacing-4);
-
       }
     `];
   }
