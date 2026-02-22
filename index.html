@@ -28,15 +28,28 @@
       background-color: var(--ddd-accent-2);
       color: var(--ddd-primary-17);
     }
+    h1{
+      font-size: var(--ddd-font-size-m);
+      color: var(--ddd-theme-default-beaver80);
+    }
   </style>
-  <title>counter-app</title>
+  <title>Counter App</title>
 </head>
 
 <body>
   <div id="demo">
-    <h1>counter-app</h1>
+    <h1>COUNTER ONE/DEFAULT</h1>
     <counter-app></counter-app>
     </div>
+
+  <div id="two">
+    <h1>COUNTER TWO</h1>
+    <counter-app 
+    count="16" 
+    min="10" 
+    max="25"></counter-app>
+  </div>
+
   <script type="module" src="./counter-app.js"></script>
 </body>
 </html>
