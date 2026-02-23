@@ -61,7 +61,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
       :host([count="21"]){
         color: var(--ddd-theme-default-original87Pink);
       }
-      :host(.at-min) {
+      :host(.at-min) { //css for the at-min class, which is toggled in the updated function below, when the count is equal to the min value
         color: var(--ddd-theme-default-athertonViolet);
       }
       :host(.at-max) {
@@ -78,7 +78,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
         justify-content: center;
         margin-bottom: var(--ddd-spacing-4);
       }
-      button {
+      button { //I just styled the html tag since I never made a class for each button, just their container
         background-color: var(--ddd-theme-default-alertImmediate);
         font-size: var(--counter-app-button-font-size, var(--ddd-font-size-s));
         margin: var(--ddd-spacing-2);
@@ -137,7 +137,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-updated(changedProperties) { //same logic as above, but it toggles the counter app class to at-min/max, so that we can apply css to it
+updated(changedProperties) { //same logic as above, but it toggles the counter app class to at-min/max, so that we can apply css to it. sorta similar logic to the first time we used js in the code pen card with the fancy toggle (it was its own class that was toggled on/off in the html inspect)
   if (changedProperties.has("count")) {
     this.classList.toggle("at-min", this.count == this.min); //change class to at min when count = min
     this.classList.toggle("at-max", this.count == this.max); //change class to at max when count = max
